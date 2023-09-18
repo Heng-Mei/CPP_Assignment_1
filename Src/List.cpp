@@ -1,10 +1,11 @@
 /*
  * @Date: 2023-09-18 19:53:12
  * @LastEditors: Heng-Mei l888999666y@gmail.com
- * @LastEditTime: 2023-09-18 23:20:07
+ * @LastEditTime: 2023-09-19 01:15:21
  * @FilePath: \homework_1\Src\List.cpp
  */
 #include <iostream>
+#include <fstream>
 using namespace std;
 #include "List.h"
 
@@ -119,9 +120,20 @@ void traverse(List *plist, int dir)
  * @param {char} *fileName 写入的文件名
  * @return {*} 返回写入状态
  */
-status listToFile(List *plist, char *fileName)
+status listToFile(List *plist, const char *fileName)
 {
-    // TODO 将链表写入文件
+    if (plist == NULL)
+        return false;
+    fstream outfile;
+    outfile.open(fileName, ios::out);
+    List *node = plist;
+    while (node != NULL)
+    {
+        outfile << node->value << endl;
+        node = node->nextNode;
+    }
+    outfile.close();
+    return true;
 }
 
 /**
@@ -129,7 +141,50 @@ status listToFile(List *plist, char *fileName)
  * @param {char} *fileName 读入的文件名
  * @return {List *} 返回读入的链表首节点地址
  */
-List *fileToList(char *fileName)
+List *fileToList(const char *fileName)
 {
-    // TODO 从文件读入链表
+    List *plist = new List;
+    setNode(plist, NULL, NULL, 0);
+
+    List *node = plist;
+    fstream infile;
+    int value;
+    infile.open(fileName, ios::in);
+
+    infile >> value;
+    plist->value = value;
+    while (true)
+    {
+        infile >> value;
+        if (infile.eof())
+            break;
+        List *newNode = new List;
+        setNode(newNode, node, NULL, value);
+        node->nextNode = newNode;
+        node = newNode;
+    }
+    return plist;
+}
+
+/**
+ * @description: 在指定位置后插入节点
+ * @param {List} *plist 链表首节点地址
+ * @param {int} value 插入的值
+ * @param {int} index 索引
+ * @return {status} 返回状态，false代表首地址为空
+ */
+status insertIndexNode(List *plist, int value, int index)
+{
+    //TODO 在指定位置后插入节点
+}
+
+/**
+ * @description: 删除指定位置后的节点
+ * @param {List} *plist 链表首节点地址
+ * @param {int} index 索引
+ * @return {status} 返回状态，false代表首地址为空
+ */
+status deleteIndexNode(List *plist, int index)
+{
+    //TODO 删除指定位置后的节点
 }
