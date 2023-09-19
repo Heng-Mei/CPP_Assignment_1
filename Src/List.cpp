@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-18 19:53:12
  * @LastEditors: Heng-Mei l888999666y@gmail.com
- * @LastEditTime: 2023-09-19 18:59:03
+ * @LastEditTime: 2023-09-19 19:30:12
  * @FilePath: \homework_1\Src\List.cpp
  */
 #include <iostream>
@@ -159,7 +159,7 @@ List *readlist(const char *fileName)
 
 /**
  * @description: 在指定位置后插入节点
- * @param {List} *plist 链表首节点地址
+ * @param {List} *plist 链表指针
  * @param {int} value 插入的值
  * @param {int} index 插入值的索引
  * @return {status} 返回状态，false代表首地址为空

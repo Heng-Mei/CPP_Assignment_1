@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-18 19:50:57
  * @LastEditors: Heng-Mei l888999666y@gmail.com
- * @LastEditTime: 2023-09-19 18:55:29
+ * @LastEditTime: 2023-09-19 19:30:51
  * @FilePath: \homework_1\main.cpp
  */
 #include <iostream>
@@ -65,7 +65,7 @@ int main()
     {
         int value = rand() * 10 / RAND_MAX; // 生成0-10的随机整数
         if (!addNode(plist, value))         // 尾插节点
-            cout << "首地址为空！" << endl;
+            cout << "链表指针为空！" << endl;
     }
     cout << "随机生成链表正逆序:" << endl;
     traverse(plist, 0); // 随机生成链表后正序输出
@@ -74,7 +74,7 @@ int main()
     // 2.
     // 删除节点
     if (!delNode(plist)) // 删除尾部节点
-        cout << "首地址为空！或该链表只有一个节点" << endl;
+        cout << "链表指针为空！或该链表只有一个节点" << endl;
 
     cout << "删除尾部节点后正逆序:" << endl;
     traverse(plist, 0); // 删除尾部节点后正序输出
@@ -83,14 +83,14 @@ int main()
     // 3.
     // 删除节点（指定索引）
     if (!deleteNode(plist, 2)) // 删除索引为2的节点
-        cout << "首地址为空！或索引非法" << endl;
+        cout << "链表指针为空！或索引非法" << endl;
 
     cout << "删除索引为2的节点后正逆序:" << endl;
     traverse(plist, 0); // 删除索引为2的节点后正序输出
     traverse(plist, 1); // 删除索引为2的节点后逆序输出
 
     if (!deleteNode(plist, 0)) // 删除索引为0节点
-        cout << "首地址为空！或该链表只有一个节点" << endl;
+        cout << "链表指针为空！或该链表只有一个节点" << endl;
 
     cout << "删除索引为0节点后正逆序:" << endl;
     traverse(plist, 0); // 删除索引为0节点后正序输出
@@ -99,7 +99,7 @@ int main()
     // 4.
     // 追加节点
     if (!addNode(plist, 0)) // 追加尾部节点
-        cout << "首地址为空！" << endl;
+        cout << "链表指针为空！" << endl;
     cout << "追加尾部节点后正逆序:" << endl;
     traverse(plist, 0); // 追加尾部节点后正序输出
     traverse(plist, 1); // 追加尾部节点后逆序输出
@@ -107,13 +107,13 @@ int main()
     // 5
     // 追加节点（指定索引）
     if (!insertNode(plist, 0, 0)) // 在索引0处增加节点
-        cout << "首地址为空！或索引非法" << endl;
+        cout << "链表指针为空！或索引非法" << endl;
     cout << "在索引0处增加节点后正逆序:" << endl;
     traverse(plist, 0); // 在索引0处增加节点后正序输出
     traverse(plist, 1); // 在索引0处增加节点后逆序输出
 
     if (!insertNode(plist, 0, 5)) // 在索引5处增加节点
-        cout << "首地址为空！或索引非法" << endl;
+        cout << "链表指针为空！或索引非法" << endl;
     cout << "在索引5处增加节点后正逆序:" << endl;
     traverse(plist, 0); // 在索引5处增加节点后正序输出
     traverse(plist, 1); // 在索引5处增加节点后逆序输出
