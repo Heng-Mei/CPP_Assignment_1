@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-18 20:12:54
  * @LastEditors: Heng-Mei l888999666y@gmail.com
- * @LastEditTime: 2023-09-19 01:10:55
+ * @LastEditTime: 2023-09-19 13:12:27
  * @FilePath: \homework_1\Inc\List.h
  */
 #ifndef LIST_H
@@ -22,5 +22,6 @@ void traverse(List *plist, int dir);
 status listToFile(List *plist, const char *fileName);
 List *fileToList(const char *fileName);
 status insertIndexNode(List *plist, int value, int index);
-status deleteIndexNode(List *plist, int index);
+List *deleteIndexNode(List *plist, int index);
+List *findIndex(List *plist, int index);
 #endif // LIST_H

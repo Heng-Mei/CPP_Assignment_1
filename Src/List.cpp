@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-18 19:53:12
  * @LastEditors: Heng-Mei l888999666y@gmail.com
- * @LastEditTime: 2023-09-19 01:15:21
+ * @LastEditTime: 2023-09-19 13:20:04
  * @FilePath: \homework_1\Src\List.cpp
  */
 #include <iostream>
@@ -175,16 +175,60 @@ List *fileToList(const char *fileName)
  */
 status insertIndexNode(List *plist, int value, int index)
 {
-    //TODO 在指定位置后插入节点
+    if (plist == NULL || index <= 0)
+        return false;
+    List *node = findIndex(plist, index);
+    if (node == NULL)
+        return false;
+    insertNode(node, value);
+    return true;
 }
 
 /**
- * @description: 删除指定位置后的节点
+ * @description: 删除指定位置的节点
  * @param {List} *plist 链表首节点地址
  * @param {int} index 索引
- * @return {status} 返回状态，false代表首地址为空
+ * @return {List *} 返回删除后的首地址，NULL代表传入首地址为空或索引非法
  */
-status deleteIndexNode(List *plist, int index)
+List *deleteIndexNode(List *plist, int index)
 {
-    //TODO 删除指定位置后的节点
+    if (plist == NULL || index <= 0)
+        return NULL;
+    List *node = findIndex(plist, index);
+    if (node == NULL)
+        return NULL;
+    List *newList = plist;
+    if (node->beforeNode == NULL)
+    {
+        newList = newList->nextNode;
+        newList->beforeNode = NULL;
+        delete node;
+    }
+    else if (node->nextNode == NULL)
+    {
+        node->beforeNode->nextNode == NULL;
+        delete node;
+    }
+    else
+    {
+        node->beforeNode->nextNode = node->nextNode;
+        node->nextNode->beforeNode = node->beforeNode;
+        delete node;
+    }
+    return newList;
+}
+
+/**
+ * @description: 查找指定索引的地址
+ * @param {List} *plist 首地址
+ * @param {int} index 索引
+ * @return {List *} 索引节点地址
+ */
+List *findIndex(List *plist, int index)
+{
+    int curIndex = 1;
+    for (List *node = plist; node != NULL; node = node->nextNode, curIndex++)
+        if (curIndex == index)
+            return node;
+    return NULL;
 }
