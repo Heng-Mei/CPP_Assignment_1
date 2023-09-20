@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-18 19:50:57
  * @LastEditors: Heng-Mei l888999666y@gmail.com
- * @LastEditTime: 2023-09-19 19:30:51
+ * @LastEditTime: 2023-09-20 15:38:17
  * @FilePath: \homework_1\main.cpp
  */
 #include <iostream>
@@ -104,7 +104,7 @@ int main()
     traverse(plist, 0); // 追加尾部节点后正序输出
     traverse(plist, 1); // 追加尾部节点后逆序输出
 
-    // 5
+    // 5.
     // 追加节点（指定索引）
     if (!insertNode(plist, 0, 0)) // 在索引0处增加节点
         cout << "链表指针为空！或索引非法" << endl;
