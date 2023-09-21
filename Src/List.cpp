@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-18 19:53:12
  * @LastEditors: Heng-Mei l888999666y@gmail.com
- * @LastEditTime: 2023-09-19 19:30:12
+ * @LastEditTime: 2023-09-21 16:49:44
  * @FilePath: \homework_1\Src\List.cpp
  */
 #include <iostream>
@@ -115,11 +115,9 @@ status savelist(List *plist, const char *fileName)
         return false;
     fstream outfile;
     outfile.open(fileName, ios::out);
-    Node *node = plist->head;
-    while (node != NULL)
+    for (Node* node = plist->head; node != NULL;node= node->nextNode)
     {
         outfile << node->value << endl;
-        node = node->nextNode;
     }
     outfile.close();
     return true;
