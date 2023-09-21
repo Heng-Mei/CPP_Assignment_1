@@ -1,18 +1,18 @@
 <!--
  * @Date: 2023-09-20 15:18:25
  * @LastEditors: Heng-Mei l888999666y@gmail.com
- * @LastEditTime: 2023-09-21 12:58:43
+ * @LastEditTime: 2023-09-21 13:00:09
  * @FilePath: \homework_1\README.md
 -->
 # 1.    作业要求
 ## 1.1  函数
 ---
 - [x] 链表添加节点功能  
-  -   `bool addNode(list* plist,int nVal)`    
-  -   参数：`plist`，要追加节点的链表指针，`nVal`，节点值 
-  -   返回值：是否成功    
-  -   要求内部有合法性验证    
-  -   节点添加于链表尾部  
+-   `bool addNode(list* plist,int nVal)`    
+-   参数：`plist`，要追加节点的链表指针，`nVal`，节点值 
+-   返回值：是否成功    
+-   要求内部有合法性验证    
+-   节点添加于链表尾部  
 ---
 - [x] 链表删除节点功能    
 -   `bool delNode(list* plist)`
