@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-18 19:53:12
  * @LastEditors: Heng-Mei l888999666y@gmail.com
- * @LastEditTime: 2023-09-21 16:49:44
+ * @LastEditTime: 2023-09-21 16:53:54
  * @FilePath: \homework_1\Src\List.cpp
  */
 #include <iostream>
@@ -115,7 +115,7 @@ status savelist(List *plist, const char *fileName)
         return false;
     fstream outfile;
     outfile.open(fileName, ios::out);
-    for (Node* node = plist->head; node != NULL;node= node->nextNode)
+    for (Node *node = plist->head; node != NULL; node = node->nextNode)
     {
         outfile << node->value << endl;
     }
@@ -169,7 +169,7 @@ status insertNode(List *plist, int value, int index)
     if (index == 0)
     {
         Node *newNode = new Node;
-        setNode(newNode,NULL,plist->head,value);
+        setNode(newNode, NULL, plist->head, value);
         plist->head->beforeNode = newNode;
         plist->head = newNode;
         return true;
@@ -180,14 +180,14 @@ status insertNode(List *plist, int value, int index)
     if (node->nextNode == NULL)
     {
         Node *newNode = new Node;
-        setNode(newNode,node,NULL,value);
+        setNode(newNode, node, NULL, value);
         node->nextNode = newNode;
         plist->tail = newNode;
     }
     else
     {
         Node *newNode = new Node;
-        setNode(newNode,node,node->nextNode,value);
+        setNode(newNode, node, node->nextNode, value);
         newNode->beforeNode->nextNode = newNode;
         newNode->nextNode->beforeNode = newNode;
     }
