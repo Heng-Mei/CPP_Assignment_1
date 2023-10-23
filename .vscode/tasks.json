@@ -9,8 +9,8 @@
                 "-g",
                 "${fileDirname}/*.cpp",
                 "-I",
-                "B:\\C++\\homework\\homework_1\\Inc",
-                "B:\\C++\\homework\\homework_1\\Src\\**",
+                "${workspaceFolder}\\Inc",
+                "${workspaceFolder}\\Src\\**",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
